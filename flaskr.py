@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from contextlib import closing
 
 import sqlite3
@@ -80,9 +82,7 @@ def redirect_url():
 
 '''
 mail extends
-@TODO 再confige里配置SMTP
-
-
+TODO 再confige里配置SMTP
 '''
 
 from flaskext.mail import Mail, Message
@@ -105,16 +105,16 @@ def index():
     return render_template("index.html", entries = entries)
 
 def login_check(f):
-    def new_f():    
+    def decorator():    
         if not session.get('username'):
             return redirect(url_for('login'))
         else:
             '''
-			not f() here, otherwise, equal to "redirect(redirect_url())" in this line, 
-			but not "return redirect(redirect_url())", which is supposed to be
+            not f() here, otherwise, equal to "redirect(redirect_url())" in this line, 
+            but not "return redirect(redirect_url())", which is supposed to be
             '''
             return f()        
-    return new_f
+    return decorator
 
 @app.route('/add_entry', methods = ['Post'])
 @login_check
@@ -196,8 +196,6 @@ def login_valide():
 def error_404(error):
     app.logger.error('404 error')
     return render_template("404.html", error=error), 404
-
-
 
 # ###
 # # pluggable views
