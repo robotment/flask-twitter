@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADMINS_EMAIL	config.py	/^ADMINS_EMAIL = 'me@delai.me'$/;"	v
+Blueprint	pages.py	/^from flask import Blueprint, render_template, abort$/;"	i
+DATABASE	config.py	/^DATABASE = 'flaskr.db'$/;"	v
+DEBUG	config.py	/^DEBUG = True$/;"	v
+DEFAULT_MAIL_SENDER	config.py	/^DEFAULT_MAIL_SENDER = 'me@delai.me'$/;"	v
+Flask	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+Flask	flaskr_test.py	/^from flask import Markup, Flask, request$/;"	i
+INDEX_URL	config.py	/^INDEX_URL = 'http:\/\/localhost:5000'$/;"	v
+INDEX_URL	flaskr_test.py	/^INDEX_URL= 'http:\/\/localhost:5000'$/;"	v
+INDEX_URL	text_util.py	/^INDEX_URL = ''$/;"	v
+Mail	flaskr.py	/^from flaskext.mail import Mail, Message$/;"	i
+Markup	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+Markup	flaskr_test.py	/^from flask import Markup, Flask, request$/;"	i
+Message	flaskr.py	/^from flaskext.mail import Mail, Message$/;"	i
+Namespace	flaskr.py	/^from blinker import Namespace$/;"	i
+PASSWORD	config.py	/^PASSWORD = 'shizai'$/;"	v
+SECRET_KEY	config.py	/^SECRET_KEY = '\\xb9T\\xebHw\\xbd1r\\xddx\\x8cv-\\xc6\\x14q\\xd0,6\\xca\\x80\\x91+3'$/;"	v
+TemplateNotFound	pages.py	/^from jinja2 import TemplateNotFound$/;"	i
+USERNAME	config.py	/^USERNAME = 'shidelai'$/;"	v
+View	flaskr.py	/^from flask.views import View$/;"	i
+abort	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+abort	pages.py	/^from flask import Blueprint, render_template, abort$/;"	i
+add_entry	flaskr.py	/^def add_entry():$/;"	f
+app	flaskr.py	/^app = Flask(__name__)$/;"	v
+at_link	text_util.py	/^def at_link(at_name):$/;"	f
+before_request	flaskr.py	/^def before_request():$/;"	f
+blinker_ns	flaskr.py	/^blinker_ns = Namespace()$/;"	v
+closing	flaskr.py	/^from contextlib import closing$/;"	i
+connect_db	flaskr.py	/^def connect_db():$/;"	f
+contextmanager	flaskr_test.py	/^from contextlib import contextmanager$/;"	i
+date_util	flaskr.py	/^import user_center, date_util, text_util$/;"	i
+date_util	flaskr_test.py	/^import date_util$/;"	i
+datetime	date_util.py	/^from datetime import datetime$/;"	i
+datetime_from_timestamp	date_util.py	/^def datetime_from_timestamp(timestamp):$/;"	f
+entries	schema.sql	/^create table entries ($/;"	t
+entries.author	schema.sql	/^  id integer primary key autoincrement,$/;"	F
+entries.id	schema.sql	/^create table entries ($/;"	F
+entries.post_time	schema.sql	/^  text string not null,$/;"	F
+entries.text	schema.sql	/^  title string not null,$/;"	F
+entries.title	schema.sql	/^  author string not null,$/;"	F
+error_404	flaskr.py	/^def error_404(error):$/;"	f
+flash	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+flaskr	flaskr_test.py	/^import flaskr$/;"	i
+flaskr_test	flaskr_test.py	/^class flaskr_test(unittest.TestCase):$/;"	c
+g	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+html_process	text_util.py	/^def html_process(text):$/;"	f
+index	flaskr.py	/^def index():$/;"	f
+init_db	flaskr.py	/^def init_db():$/;"	f
+is_user	user_center.py	/^def is_user(username):$/;"	f
+login	flaskr.py	/^def login():$/;"	f
+login_check	flaskr.py	/^def login_check(f):$/;"	f
+login_valide	flaskr.py	/^def login_valide():$/;"	f
+login_valide	flaskr_test.py	/^    def login_valide(self, username, password):$/;"	m	class:flaskr_test
+logout	flaskr.py	/^def logout():$/;"	f
+logout	flaskr_test.py	/^    def logout(self):$/;"	m	class:flaskr_test
+mail	flaskr.py	/^mail = Mail(app)$/;"	v
+mail_test	flaskr.py	/^def mail_test():$/;"	f
+make_response	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+markup	flaskr.py	/^def markup():$/;"	f
+new_f	flaskr.py	/^    def new_f():    $/;"	f	function:login_check
+now_timestamp	date_util.py	/^def now_timestamp():$/;"	f
+os	flaskr_test.py	/^import os$/;"	i
+post	flaskr.py	/^def post(post_id):$/;"	f
+pw_error_record	flaskr.py	/^def pw_error_record(sender, **data):$/;"	f
+pw_error_signal	flaskr.py	/^pw_error_signal = blinker_ns.signal('error_signal')$/;"	v
+re	text_util.py	/^import re$/;"	i
+redirect	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+redirect_url	flaskr.py	/^def redirect_url():$/;"	f
+render_template	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+render_template	pages.py	/^from flask import Blueprint, render_template, abort$/;"	i
+request	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+request	flaskr_test.py	/^from flask import Markup, Flask, request$/;"	i
+search	flaskr.py	/^def search():$/;"	f
+session	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+setUp	flaskr_test.py	/^    def setUp(self):$/;"	m	class:flaskr_test
+show	pages.py	/^def show(page):$/;"	f
+simple_page	flaskr.py	/^from pages import simple_page$/;"	i
+simple_page	pages.py	/^simple_page = Blueprint('simple_page', __name__)$/;"	v
+sqlite3	flaskr.py	/^import sqlite3$/;"	i
+str_from_datetime	date_util.py	/^def str_from_datetime(date_time):$/;"	f
+str_from_timestamp	date_util.py	/^def str_from_timestamp(timestamp):$/;"	f
+tearDown	flaskr_test.py	/^    def tearDown(self):$/;"	m	class:flaskr_test
+teardown_request	flaskr.py	/^def teardown_request(exception):$/;"	f
+tempfile	flaskr_test.py	/^import tempfile$/;"	i
+template_rendered	flaskr.py	/^from flask import template_rendered$/;"	i
+template_rendered	flaskr_test.py	/^from flask import template_rendered$/;"	i
+test_add_entry	flaskr_test.py	/^    def test_add_entry(self):$/;"	m	class:flaskr_test
+test_empty_db	flaskr_test.py	/^    def test_empty_db(self):$/;"	m	class:flaskr_test
+test_login	flaskr_test.py	/^    def test_login(self):$/;"	m	class:flaskr_test
+test_login_valide_and_logout	flaskr_test.py	/^    def test_login_valide_and_logout(self):$/;"	m	class:flaskr_test
+test_redirect	flaskr_test.py	/^    def test_redirect(self):$/;"	m	class:flaskr_test
+test_str	text_util.py	/^    test_str = '@施德来 不是人，shidelai@gmail.com @bobo 哈哈 @jialiang @shidelai'$/;"	v
+test_user	flaskr_test.py	/^    def test_user(self):$/;"	m	class:flaskr_test
+text_util	flaskr.py	/^import user_center, date_util, text_util$/;"	i
+time	date_util.py	/^import time;$/;"	i
+timestamp_from_datetime	date_util.py	/^def timestamp_from_datetime(date_time):$/;"	f
+unittest	flaskr_test.py	/^import unittest$/;"	i
+url_for	flaskr.py	/^from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup$/;"	i
+user	flaskr.py	/^def user(request_username):$/;"	f
+user_center	flaskr.py	/^import user_center, date_util, text_util$/;"	i
+user_valide	user_center.py	/^def user_valide(username, password):$/;"	f
+users	user_center.py	/^users = {'shidelai': 'shizai',$/;"	v
+when_template_rendered	flaskr.py	/^def when_template_rendered(sender, template, context):$/;"	f

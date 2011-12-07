@@ -1,0 +1,9 @@
+{% if session.get('username') %}
+	{% extends "base_entries_addform.html" %}
+{% else %}
+	{% extends "base_entries.html" %}
+{% endif %}
+
+{% block page_intr %} 
+    	<h1>Home Page</h1>
+{% endblock %}
