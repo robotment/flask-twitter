@@ -97,7 +97,40 @@ def mail_test():
     return 'email'
 
 
+@app.url_defaults
+def check_language_code(endpoint, values):
+    '''
+    app.url_defaults decorator add the fuction below to 
+    url_default_functions : A dictionary with lists of functions 
+    that can be used as URL value preprocessors( called while url_for is called)
+    '''
+    app.logger.debug('endpoint: %s, values: %s' % (endpoint, repr(values)))
 
+    if hasattr( g, 'lang_code'):
+        app.logger.debug("lang_code: %s" % g.lang_code)
+    else:
+        app.logger.debug('no lang_code')
+
+    return
+
+    '''
+    if app.url_map.is_endpoint_expecting(endpoint, 'lang_code'):
+        app.logger.debug('values[lang_code] = g.lang_code')
+        values['lang_code'] = g.lang_code
+    '''
+
+@app.url_value_preprocessor
+def lang_code_process(endpoint, values):
+    '''
+    called before url_default_functions like check_language_code() 
+    '''
+    app.logger.debug('app.url_value_preprocessor > lang_code_process called')
+    if values and 'lang_code' in values:
+        g.lang_code = values.pop('lang_code', None)
+    else:
+        app.logger.debug('no lang_code in values')
+
+@app.route("/<lang_code>/")
 @app.route("/")
 def index():
     cur = g.db.execute('select author, title, text, post_time from entries order by id desc')
