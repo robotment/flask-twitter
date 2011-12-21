@@ -7,7 +7,7 @@ Created by Delai on 2011-11-09.
 Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 """
 import os
-import flaskr
+import __init__ as flaskr
 import unittest
 import tempfile
 import date_util

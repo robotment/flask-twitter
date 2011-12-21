@@ -1,0 +1,417 @@
+receive SIGNAL from <flask.app.Flask object at 0x1012baa50>, data: {'msg': 'password Error', 'username': u'shidelai'}
+receive SIGNAL from <flask.app.Flask object at 0x1012baa50>, data: {'msg': 'password Error', 'username': u'sdf'}
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+endpoint: static, values: {'filename': 'style.css'}
+no lang_code
+endpoint: static, values: {'filename': 'favicon.ico'}
+no lang_code
+endpoint: login, values: {}
+no lang_code
+endpoint: login_valide, values: {}
+no lang_code
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+endpoint: static, values: {'filename': 'style.css'}
+no lang_code
+endpoint: static, values: {'filename': 'favicon.ico'}
+no lang_code
+endpoint: login, values: {}
+no lang_code
+endpoint: login_valide, values: {}
+no lang_code
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+shidelai approved, redirect to index page
+Redirect to http://localhost:5000/login
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+endpoint: index, values: {}
+no lang_code
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+endpoint: static, values: {'filename': 'style.css'}
+no lang_code
+endpoint: static, values: {'filename': 'favicon.ico'}
+no lang_code
+endpoint: user, values: {'request_username': u'shidelai'}
+no lang_code
+endpoint: logout, values: {}
+no lang_code
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+endpoint: static, values: {'filename': 'style.css'}
+no lang_code
+endpoint: static, values: {'filename': 'favicon.ico'}
+no lang_code
+endpoint: user, values: {'request_username': u'shidelai'}
+no lang_code
+endpoint: logout, values: {}
+no lang_code
+app.url_value_preprocessor > lang_code_process called
+no lang_code in values
+receive SIGNAL from <flask.app.Flask object at 0x1012bb950>, data: {'msg': 'password Error', 'username': u'1231'}
+receive SIGNAL from <flask.app.Flask object at 0x1012bb950>, data: {'msg': 'password Error', 'username': u'sgh'}
+404 error
+404 error
+change language setting to "ZH_CN"
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+add_user is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+add_user is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+add_user is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error

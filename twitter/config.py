@@ -6,5 +6,16 @@ USERNAME = 'shidelai'
 PASSWORD = 'shizai'
 INDEX_URL = 'http://localhost:5000'
 ADMINS_EMAIL = 'me@delai.me'
+
+#flask_mail extention
+#MAIL_PORT : default 25
+MAIL_USE_TLS = True
+#MAIL_USE_SSL : default False
+#MAIL_DEBUG : default app.debug
+
+
+MAIL_SERVER = 'smtp.gmail.com' 
+MAIL_USERNAME = 'me@delai.me'
+MAIL_PASSWORD = 'wisper123'
 DEFAULT_MAIL_SENDER = 'me@delai.me'
 

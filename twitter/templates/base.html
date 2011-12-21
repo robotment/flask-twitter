@@ -11,7 +11,9 @@
 <body>
 <div id="header">
     {% if not session.username %}
-    	<a href="{{ url_for('login') }}" class="left-text">Login</a>
+    	<a href="/" class="left-text">Home</a>  
+    	<a href="{{ url_for('login') }}">Login</a>
+		<a href="{{ url_for('register') }}">Register</a>
     {% else %}
     	<a href="/" class="left-text">Home</a>  
     	<a href="{{ url_for('user', request_username = session.username) }}"> {{ session.username }}</a>
@@ -24,7 +26,7 @@
       {% if messages %}
         <ul class="flashes">
         {% for category, message in messages %}
-          <li class="{{ category }}">{{ message }}</li>
+          <li class="{{ category | safe }}">{{ message }}</li>
         {% endfor %}
         </ul>
       {% endif %}
