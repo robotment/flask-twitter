@@ -415,3 +415,10 @@ favicon.ico is not registed user abort 404
 404 error
 favicon.ico is not registed user abort 404
 404 error
+receive SIGNAL from <flask.app.Flask object at 0x1012b8c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+receive SIGNAL from <flask.app.Flask object at 0x1012b8c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/markup
+sldkfjl is not registed user abort 404
+404 error
+sldkfjl is not registed user abort 404
+404 error

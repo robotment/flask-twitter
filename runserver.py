@@ -13,7 +13,7 @@ if app.debug:
     '''
     when flask app was init, there is only one default debug level handler bind to the logger
     '''
-    #app.logger.handlers[0].setLevel(logging.INFO)
+    app.logger.handlers[0].setLevel(logging.INFO)
 
     '''
     from logging.handlers import SMTPHandler

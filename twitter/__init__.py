@@ -6,7 +6,7 @@ import sqlite3
 from flask import Flask, request, render_template, make_response, session, redirect, url_for, flash, g, abort, Markup
 import logging
 
-import user_center, date_util, text_util
+import users, date_util, text_util
 
 from flask import template_rendered
 from blinker import Namespace
@@ -92,6 +92,7 @@ def teardown_request(exception):
 ###
 # redirct_url
 #
+
 def redirect_url():
     #app.logger.debug('request.args.get(\'next\') = %s, request.form[\'next\'] = %s, referrer = %s' \
     #                 % (request.args.get('next'), request.form.get('next'), request.referrer))
@@ -99,7 +100,7 @@ def redirect_url():
            request.form.get('next') or \
            request.referrer or \
            url_for('index')
-    app.logger.debug('Redirect to %s' % next)
+    app.logger.info('Redirect to %s' % next)
     
     return next
 ###
@@ -166,8 +167,8 @@ def lang_code_process(endpoint, values):
 '''
 SQLAlchemy
 '''
-from twitter.database import db_session
-from twitter.models import User
+from database import db_session
+from models import User
 @app.teardown_request
 def shutdown_session(exception=None):
     db_session.remove()
@@ -241,7 +242,7 @@ def markup():
 @app.route("/<request_username>")
 def user(request_username):
     app.logger.debug("user(request_username) CALLED")
-    if user_center.is_user(request_username):
+    if users.is_user(request_username):
         app.logger.debug(request_username + " is registed user")
         cur = db_conn().execute('select author, title, text, post_time from entries where author = ? order by id desc', [request_username])
         entries = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
@@ -286,7 +287,7 @@ def logout():
 def login_valide():
     message = None
     if request.method == 'POST':
-        approved, message = user_center.user_valide(request.form['username'], request.form['password'])
+        approved, message = users.user_valide(request.form['username'], request.form['password'])
         if approved:
             session['username'] = request.form['username']
             flash("You has log in successfully", "message")
