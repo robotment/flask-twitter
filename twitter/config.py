@@ -1,5 +1,5 @@
 #configuration
-DATABASE = 'twitter/flaskr.db'
+DATABASE = '/Users/arthasshih/flask/flask-twitter/twitter/tweet.db'
 DEBUG = True
 SECRET_KEY = '\xb9T\xebHw\xbd1r\xddx\x8cv-\xc6\x14q\xd0,6\xca\x80\x91+3'
 USERNAME = 'shidelai'

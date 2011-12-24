@@ -3,6 +3,7 @@ SQLAlchemy in Flask
 '''
 from sqlalchemy import Column, Integer, String
 from database import Base
+
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
@@ -16,3 +17,5 @@ class User(Base):
         self.password = password
     def __repr__(self):
         return "User: %s PassWord: %s Email: %s" % (self.name, self.password, self.email)
+
+

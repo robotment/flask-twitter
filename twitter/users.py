@@ -1,15 +1,15 @@
 #!/user/bin/python2.7
 
-users = {'shidelai': '123456',
-        'jialiang': '123456',
-        'bobo': '123456'}
+from database import db_session
+from models import User
 
 def user_valide(username, password):
     message = []
     approved = False
-    if username not in users:
+    u = User.query.filter_by(name = username).first()
+    if not u:
         message.append('No User Named ' + username)
-    elif password != users[username]:
+    elif u.password != password:
         message.append('Invalid Password')
     else:
         message = None
@@ -17,10 +17,10 @@ def user_valide(username, password):
     return approved, message
 
 def is_user(username):
-	if username in users:
-		return True
-	else:
-		return False
+    if User.query.filter_by(name = username).first():
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     approved, message = user_valide('shidelai', 'shizai')

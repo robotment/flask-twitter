@@ -422,3 +422,48 @@ sldkfjl is not registed user abort 404
 404 error
 sldkfjl is not registed user abort 404
 404 error
+Redirect to http://localhost:5000/shidelai
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c50>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'jialiang'}
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/jialiang
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/jialiang
+Redirect to http://localhost:5000/jialiang
+Redirect to http://localhost:5000/jialiang
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+favicon.ico is not registed user abort 404
+404 error
+favicon.ico is not registed user abort 404
+404 error
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c90>, data: {'msg': 'password Error', 'username': u'delai'}
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/register
+Redirect to http://localhost:5000/register
+Redirect to http://localhost:5000/
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/
+Redirect to http://localhost:5000/register
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'delai'}
+Redirect to http://localhost:5000/register
+Redirect to http://localhost:5000/register
+Redirect to http://localhost:5000/register
+receive SIGNAL from <flask.app.Flask object at 0x1018c2c10>, data: {'msg': 'password Error', 'username': u'delai'}
+Redirect to http://localhost:5000/register
+receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'delai'}
+receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'shidelai'}
