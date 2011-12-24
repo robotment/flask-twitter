@@ -23,6 +23,7 @@ app.config.from_pyfile('config.py', silent = False)
 text_util.INDEX_URL = app.config['INDEX_URL']
 
 
+
 ###
 # blueprint
 #
@@ -105,27 +106,6 @@ def redirect_url():
     
     return next
 ###
-    
-
-
-
-'''
-mail extends
-'''
-
-from flaskext.mail import Mail, Message
-mail = Mail(app)
-@app.route("/mail")
-def send_mail():
-    from datetime import datetime
-    msg = Message("Hello",
-                  sender = ("Delai.me", "me@delai.me"),
-                  recipients=["to.too@qq.com", 'shidelai@gmail.com'])
-    #msg.body = "testing"
-    msg.html = "<h1>testing</h1> <p>%s</p> " % datetime.now()
-    mail.send(msg)
-    return 'email sended'
-
 
 @app.url_defaults
 def check_language_code(endpoint, values):
@@ -155,11 +135,10 @@ def lang_code_process(endpoint, values):
     '''
     CALLED while process http request. ( called before url_default_functions like check_language_code()) 
     '''
-
-    app.logger.debug('app.url_value_preprocessor > lang_code_process called')
-    if 'lang_code' in request.args:
-        g.lang_code = request.args['lang_code']
-        app.logger.info('change language setting to %s' % g.lang_code)
+    # 
+    # if 'lang_code' in request.args:
+    #     g.lang_code = request.args['lang_code']
+    #     app.logger.info('change language setting to %s' % g.lang_code)
 
     # if values and 'lang_code' in values:
     #     app.logger.debug('values[lang_cod]: %s' % values['lang_code'])
@@ -168,9 +147,7 @@ def lang_code_process(endpoint, values):
     #     app.logger.debug('no lang_code in values')
 
 
-
-
-
+from views import *
 
 
 # ###

@@ -2,6 +2,8 @@
 All decorator
 '''
 from functools import wraps
+from flask import render_template, request, session
+
 def login_required(f):
     @wraps(f)
     def decorator(*args, **kwargs):    

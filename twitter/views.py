@@ -3,6 +3,12 @@ SQLAlchemy
 '''
 from database import db_session
 from models import User
+from __init__ import app, db_conn, redirect_url, pw_error_signal
+from decorator import *
+from flask import request, session, flash, redirect, url_for
+import users, date_util, text_util
+
+
 @app.teardown_request
 def shutdown_session(exception=None):
     db_session.remove()

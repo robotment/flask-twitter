@@ -467,3 +467,15 @@ Redirect to http://localhost:5000/register
 receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'delai'}
 receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'shidelai'}
 receive SIGNAL from <flask.app.Flask object at 0x1018c2d10>, data: {'msg': 'password Error', 'username': u'shidelai'}
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+receive SIGNAL from <flask.app.Flask object at 0x1018cb190>, data: {'msg': 'password Error', 'username': u'shidelai'}
+receive SIGNAL from <flask.app.Flask object at 0x1018cb190>, data: {'msg': 'password Error', 'username': u'shidelai'}
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
+favicon.ico is not registed user abort 404
