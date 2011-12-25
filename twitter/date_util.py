@@ -18,6 +18,10 @@ def timestamp_from_datetime(date_time):
 
 def datetime_from_timestamp(timestamp):
 	return datetime.fromtimestamp(timestamp)
+	
+	
+def now_datetime():
+	return datetime.now()
 
 if __name__ == '__main__':
     print now_timestamp()

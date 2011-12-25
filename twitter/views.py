@@ -2,10 +2,10 @@
 SQLAlchemy
 '''
 from database import db_session
-from models import User
+from models import User, Tweet
 from __init__ import app, db_conn, redirect_url, pw_error_signal
 from decorator import *
-from flask import request, session, flash, redirect, url_for
+from flask import request, session, flash, redirect, url_for, abort
 import users, date_util, text_util
 
 
@@ -48,9 +48,8 @@ def show_user():
 @app.route("/")
 @templated('index.html')
 def index():
-    cur = db_conn().execute('select author, title, text, post_time from entries order by id desc')
-    entries = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
-    return {'entries' : entries}
+    tweets = Tweet.query.all()
+    return {'tweets' : tweets}
 
 @app.route("/register.html")
 @templated()
@@ -64,8 +63,9 @@ def add_entry():
     '''
     add entry action
     '''
-    db_conn().execute('insert into entries (author, title, text, post_time) values (?, ?, ?, ?)', [request.form['author'], request.form['title'], text_util.html_process(request.form['text']), date_util.now_timestamp()])
-    db_conn().commit()
+    t = Tweet(request.form['author'], text_util.html_process(request.form['text']), date_util.now_datetime())
+    db_session.add(t)
+    db_session.commit()
     flash('New entry is successfully added')
     return redirect(redirect_url())
 
@@ -74,14 +74,14 @@ def user(request_username):
     app.logger.debug("user(request_username) CALLED")
     if users.is_user(request_username):
         app.logger.debug(request_username + " is registed user")
-        cur = db_conn().execute('select author, title, text, post_time from entries where author = ? order by id desc', [request_username])
-        entries = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
+        cur = db_conn().execute('select author, title, text, post_time from tweets where author = ? order by id desc', [request_username])
+        tweets = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
         if(request_username == session.get('username')):
             #app.logger.debug(username + ' visit his home page')
-            return render_template("user_addform.html", request_username=request_username, entries = entries)
+            return render_template("user_addform.html", request_username=request_username, tweets = tweets)
         else:
             #app.logger.debug('You are visit' + username + ' \'s home page')
-            return render_template("user.html", request_username=request_username, entries = entries)
+            return render_template("user.html", request_username=request_username, tweets = tweets)
     else:
         app.logger.info("%s is not registed user abort 404" % request_username)   
         abort(404)
