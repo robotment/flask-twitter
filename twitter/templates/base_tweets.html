@@ -5,8 +5,9 @@
   <ul class="tweets">
   {% for tweet in tweets %}
     <li>
-	  <h2>{{ tweet.title }} <span class="time">{{ tweet.time }}</span></h2>
-	  <p><a href="/{{ tweet.author }}" class="author">{{ tweet.author }}</a>: {{ tweet.text | safe }}</p>
+	  
+	  	<p><a href="/{{ tweet.author }}" class="author">{{ tweet.author }}</a>: {{ tweet.text | safe }}</p>
+		<span class="time">{{ tweet.post_time }}</span>
     </li>
   {% else %}
     <li><em>Unbelievable.  No tweets here so far</em></li>

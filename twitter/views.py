@@ -3,7 +3,7 @@ SQLAlchemy
 '''
 from database import db_session
 from models import User, Tweet
-from __init__ import app, db_conn, redirect_url, pw_error_signal
+from __init__ import app, redirect_url, pw_error_signal
 from decorator import *
 from flask import request, session, flash, redirect, url_for, abort
 import users, date_util, text_util
@@ -48,7 +48,7 @@ def show_user():
 @app.route("/")
 @templated('index.html')
 def index():
-    tweets = Tweet.query.all()
+    tweets = Tweet.query.order_by('post_time').all()
     return {'tweets' : tweets}
 
 @app.route("/register.html")
@@ -57,16 +57,16 @@ def register():
     pass
 
 
-@app.route('/add_entry', methods = ['Post'])
+@app.route('/add_tweet', methods = ['Post'])
 @login_required
-def add_entry():
+def add_tweet():
     '''
-    add entry action
+    add tweet action
     '''
     t = Tweet(request.form['author'], text_util.html_process(request.form['text']), date_util.now_datetime())
     db_session.add(t)
     db_session.commit()
-    flash('New entry is successfully added')
+    flash('New tweet is successfully added')
     return redirect(redirect_url())
 
 @app.route("/<request_username>")
@@ -74,8 +74,8 @@ def user(request_username):
     app.logger.debug("user(request_username) CALLED")
     if users.is_user(request_username):
         app.logger.debug(request_username + " is registed user")
-        cur = db_conn().execute('select author, title, text, post_time from tweets where author = ? order by id desc', [request_username])
-        tweets = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
+        tweets = Tweet.query.filter_by(author = request_username).order_by('post_time').all()
+        #tweets = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
         if(request_username == session.get('username')):
             #app.logger.debug(username + ' visit his home page')
             return render_template("user_addform.html", request_username=request_username, tweets = tweets)
@@ -83,7 +83,6 @@ def user(request_username):
             #app.logger.debug('You are visit' + username + ' \'s home page')
             return render_template("user.html", request_username=request_username, tweets = tweets)
     else:
-        app.logger.info("%s is not registed user abort 404" % request_username)   
         abort(404)
 
 @app.route("/login.html")
@@ -124,8 +123,10 @@ def login_valide():
 
 @app.errorhandler(404)
 def error_404(error):
-    app.logger.error('404 error')
-    return render_template("404.html", error=error), 404
+    if error:
+        app.logger.error('404: %s' % error)
+        flash(error, "error")
+    return render_template("404.html"), 404
 
 '''
 mail extends

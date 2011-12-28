@@ -11,29 +11,19 @@ import users, date_util, text_util
 from flask import template_rendered
 from blinker import Namespace
 
-from flask.views import View
-
-
-
 app = Flask(__name__)
-
-
 app.config.from_pyfile('config.py', silent = False)
-
 text_util.INDEX_URL = app.config['INDEX_URL']
 
-
-
-###
-# blueprint
-#
+'''
+    blueprint
+'''
 from pages import simple_page
 app.register_blueprint(simple_page, url_prefix='/pages')
 
-
-###
-# blinker singal
-# 
+'''
+    blinker singal
+'''
 def pw_error_record(sender, **data):
     app.logger.info('receive SIGNAL from %s, data: %s' % (sender, data))
 
@@ -43,58 +33,14 @@ pw_error_signal.connect(pw_error_record, app)  # only receive the signal send fr
 
 @template_rendered.connect_via(app)
 def when_template_rendered(sender, template, context):
-    #print 'Template %s is rendered with %s' % (template.name, context)
-    #app.logger.debug('Template %s is rendered' % (template.name))
-    #print 'sender: %s' % (sender)
+    '''
+        template_rendered is the sender
+    '''
     pass
-###
-
-
 
 '''
-DB
+    redirct_url
 '''
-def connect_db():
-    return sqlite3.connect(app.config['DATABASE'])
-
-def init_db():
-    with closing(connect_db()) as db:
-        with app.open_resource('schema.sql') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
-
-def db_conn():
-    db = getattr(g, '_db', None)
-    if db is None:
-        db = g._db = connect_db()
-    return db
-
-
-def query_db(query, args=(), one=False):
-    cur = g.db.execute(query, args)
-    rv = [dict((cur.description[idx][0], value) for idx, value in enumerate(row)) for row in cur.fetchall()]
-    return (rv[0] if rv else None) if one else rv
-
-
-                
-@app.before_request
-def before_request():
-    app.logger.debug('before_request() called')
-    
-
-# @app.after_request
-# def after_request(abc):
-#   app.logger.debug('after_request() called')
- 
-@app.teardown_request
-def teardown_request(exception):
-    if hasattr(g, 'db'):
-        db_conn().close()        
-
-###
-# redirct_url
-#
-
 def redirect_url():
     #app.logger.debug('request.args.get(\'next\') = %s, request.form[\'next\'] = %s, referrer = %s' \
     #                 % (request.args.get('next'), request.form.get('next'), request.referrer))
@@ -105,7 +51,18 @@ def redirect_url():
     app.logger.debug('Redirect to %s' % next)
     
     return next
-###
+
+'''
+    hack location
+'''
+@app.before_request
+def before_request():
+    app.logger.debug('before_request() called')
+ 
+@app.teardown_request
+def teardown_request(exception):
+    pass      
+
 
 @app.url_defaults
 def check_language_code(endpoint, values):
@@ -178,16 +135,16 @@ from views import *
 #     cur = None
 # 
 #     def get_objects():
-#         return self.get_entries()
+#         return self.get_tweets()
 # 
-#     def get_entries(self):
+#     def get_tweets(self):
 #         return [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in self.cur.fetchall()]
 # 
 # class AllEntriesView(EntriesView):
-#     cur = db_conn().execute('select author, title, text, post_time from entries order by id desc')
+#     cur = db_conn().execute('select author, title, text, post_time from tweets order by id desc')
 # 
 # class UserEntriesView(EntriesView):
-#     cur = db_conn().execute('select author, title, text, post_time from entries where author = "%s" order by id desc' % (username))
+#     cur = db_conn().execute('select author, title, text, post_time from tweets where author = "%s" order by id desc' % (username))
 # 
 # app.add_url_rule('/', view_func=AllEntriesView.as_view('index.html'))
 # 
