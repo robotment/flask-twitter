@@ -107,48 +107,7 @@ def lang_code_process(endpoint, values):
 from views import *
 
 
-# ###
-# # pluggable views
-# #
-# class ListView(View):
-# 
-#     username = None
-#     template_name = None
-# 
-#     def __init__(self, template_name):
-#         self.template_name = template_name
-# 
-#     def render_template(self, context):
-#         return render_template(self.template_name, **context)
-# 
-#     def dispatch_request(self):
-#         context = {'username': self.username,
-#                    'objects': self.get_objects()
-#                    }
-#         return self.render_template(context)
-# 
-# class EntriesView(ListView):
-# 
-#     if 'username' in session:
-#         username = session['username']
-# 
-#     cur = None
-# 
-#     def get_objects():
-#         return self.get_tweets()
-# 
-#     def get_tweets(self):
-#         return [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in self.cur.fetchall()]
-# 
-# class AllEntriesView(EntriesView):
-#     cur = db_conn().execute('select author, title, text, post_time from tweets order by id desc')
-# 
-# class UserEntriesView(EntriesView):
-#     cur = db_conn().execute('select author, title, text, post_time from tweets where author = "%s" order by id desc' % (username))
-# 
-# app.add_url_rule('/', view_func=AllEntriesView.as_view('index.html'))
-# 
-# ###
+
 
 
 

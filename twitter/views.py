@@ -7,12 +7,12 @@ from __init__ import app, redirect_url, pw_error_signal
 from decorator import *
 from flask import request, session, flash, redirect, url_for, abort
 import users, date_util, text_util
+from flask.views import View
 
 
 @app.teardown_request
 def shutdown_session(exception=None):
     db_session.remove()
-
 
 @app.route("/add_user", methods = ['Post'])
 def add_user():
@@ -45,12 +45,6 @@ def remove_user():
 def show_user():
     return repr(User.query.filter_by(name = 'shidelai').first())
 
-@app.route("/")
-@templated('index.html')
-def index():
-    tweets = Tweet.query.order_by('post_time').all()
-    return {'tweets' : tweets}
-
 @app.route("/register.html")
 @templated()
 def register():
@@ -69,21 +63,7 @@ def add_tweet():
     flash('New tweet is successfully added')
     return redirect(redirect_url())
 
-@app.route("/<request_username>")
-def user(request_username):
-    app.logger.debug("user(request_username) CALLED")
-    if users.is_user(request_username):
-        app.logger.debug(request_username + " is registed user")
-        tweets = Tweet.query.filter_by(author = request_username).order_by('post_time').all()
-        #tweets = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
-        if(request_username == session.get('username')):
-            #app.logger.debug(username + ' visit his home page')
-            return render_template("user_addform.html", request_username=request_username, tweets = tweets)
-        else:
-            #app.logger.debug('You are visit' + username + ' \'s home page')
-            return render_template("user.html", request_username=request_username, tweets = tweets)
-    else:
-        abort(404)
+
 
 @app.route("/login.html")
 @templated()
@@ -124,7 +104,7 @@ def login_valide():
 @app.errorhandler(404)
 def error_404(error):
     if error:
-        app.logger.error('404: %s' % error)
+        app.logger.error('%s for %s' % (error, request.url))
         flash(error, "error")
     return render_template("404.html"), 404
 
@@ -144,3 +124,83 @@ def send_mail():
     msg.html = "<h1>testing</h1> <p>%s</p> " % datetime.now()
     mail.send(msg)
     return 'email sended'
+
+
+'''
+    pluggable views
+'''
+class ListView(View):
+    
+    def __init__(self, template_name):
+        self.template_name = template_name
+        
+    def get_template_name(self):
+        return self.template_name
+
+    def render_template(self, context):
+        return render_template(self.get_template_name(), **context)
+
+    def dispatch_request(self):
+        context = {'objects': self.get_objects()}
+        return self.render_template(context)
+
+class UserListView(ListView):
+    decorators = [login_required]
+    
+    def get_objects(self):
+        return User.query.all()
+
+class UserPageView(ListView):
+
+    def get_objects(self):
+        return Tweet.query.filter_by(author = self.request_username).order_by('post_time').all()
+
+    def dispatch_request(self, request_username):
+        app.logger.debug('request_name: %s' % request_username)
+        self.request_username = request_username
+        if users.is_user(request_username):
+            context = {'objects': self.get_objects(), 'request_username' : request_username}
+            return self.render_template(context)
+        else:
+            abort(404)
+
+class IndexView(ListView):
+    def get_template_name(self):
+        return 'index.html'
+    
+    def get_objects(self):
+        return Tweet.query.order_by('post_time').all()
+    
+    
+app.add_url_rule('/users.html', view_func=UserListView.as_view('users_list_page', 'users_list.html'))
+app.add_url_rule('/<request_username>', view_func=UserPageView.as_view('user_page', 'user.html'))
+app.add_url_rule('/', view_func=IndexView.as_view('index', 'index.html'))
+'''
+HERE LIKE
+@app.route("/<request_username>")
+def user_page(request_username):
+'''
+
+##################old code here#############
+
+# @app.route("/<request_username>")
+# def user(request_username):
+#     app.logger.debug("user(request_username) CALLED")
+#     if users.is_user(request_username):
+#         app.logger.debug(request_username + " is registed user")
+#         tweets = Tweet.query.filter_by(author = request_username).order_by('post_time').all()
+#         #tweets = [dict(author = row[0], title=row[1], text=row[2], time = date_util.str_from_timestamp(row[3])) for row in cur.fetchall()]
+#         if(request_username == session.get('username')):
+#             #app.logger.debug(username + ' visit his home page')
+#             return render_template("user_addform.html", request_username=request_username, tweets = tweets)
+#         else:
+#             #app.logger.debug('You are visit' + username + ' \'s home page')
+#             return render_template("user.html", request_username=request_username, tweets = tweets)
+#     else:
+#         abort(404)
+
+# @app.route("/")
+# @templated('index.html')
+# def index():
+#     tweets = Tweet.query.order_by('post_time').all()
+#     return {'tweets' : tweets}

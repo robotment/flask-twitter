@@ -3,14 +3,15 @@
 
 {% block tweets %}
   <ul class="tweets">
-  {% for tweet in tweets %}
+  {% if objects %}
+  	{% for tweet in objects %}
     <li>
-	  
 	  	<p><a href="/{{ tweet.author }}" class="author">{{ tweet.author }}</a>: {{ tweet.text | safe }}</p>
 		<span class="time">{{ tweet.post_time }}</span>
     </li>
+	{% endfor %}
   {% else %}
     <li><em>Unbelievable.  No tweets here so far</em></li>
-  {% endfor %}
+  {% endif %}
   </ul>
 {% endblock %}
