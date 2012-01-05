@@ -15,6 +15,9 @@ app = Flask(__name__)
 app.config.from_pyfile('config.py', silent = False)
 text_util.INDEX_URL = app.config['INDEX_URL']
 
+
+
+
 '''
     blueprint
 '''

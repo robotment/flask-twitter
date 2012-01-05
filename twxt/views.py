@@ -10,6 +10,7 @@ import users, date_util, text_util
 from flask.views import View
 
 
+
 @app.teardown_request
 def shutdown_session(exception=None):
     db_session.remove()
@@ -175,6 +176,9 @@ class IndexView(ListView):
 app.add_url_rule('/users.html', view_func=UserListView.as_view('users_list_page', 'users_list.html'))
 app.add_url_rule('/<request_username>', view_func=UserPageView.as_view('user_page', 'user.html'))
 app.add_url_rule('/', view_func=IndexView.as_view('index', 'index.html'))
+
+
+
 '''
 HERE LIKE
 @app.route("/<request_username>")

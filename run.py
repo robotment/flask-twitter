@@ -1,7 +1,11 @@
-from twitter import app
+from twxt import app
 from datetime import datetime
 
 print " * %s" % datetime.now()
+
+import flask
+
+
 
 if app.debug:
     '''
@@ -9,6 +13,7 @@ if app.debug:
     '''
 
     import logging
+
 
     '''
     when flask app was init, there is only one default debug level handler bind to the logger
