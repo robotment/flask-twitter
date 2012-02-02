@@ -1,9 +1,0 @@
-{% if session.get('username') %}
-	{% extends "base_tweets_addform.html" %}
-{% else %}
-	{% extends "base_tweets.html" %}
-{% endif %}
-
-{% block page_intr %} 
-    	<h1>Home Page</h1>
-{% endblock %}
