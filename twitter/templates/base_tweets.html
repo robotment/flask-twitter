@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block tweets %}
+  <ul class="tweets">
+  {% if objects %}
+  	{% for tweet in objects %}
+    <li>
+	  	<p><a href="/{{ tweet.author }}" class="author">{{ tweet.author }}</a>: {{ tweet.text | safe }}</p>
+		<span class="time">{{ tweet.post_time }}</span>
+    </li>
+	{% endfor %}
+  {% else %}
+    <li><em>Unbelievable.  No tweets here so far</em></li>
+  {% endif %}
+  </ul>
+{% endblock %}

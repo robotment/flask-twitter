@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Hello from Flask</title>   
+</head>
+
+<body>
+<div id="header">
+    {% if not session.username %}
+    	<a href="/" class="left-text">Home</a>  
+    	<a href="{{ url_for('login') }}">Login</a>
+		<a href="{{ url_for('register') }}">Register</a>
+    {% else %}
+    	<a href="/" class="left-text">Home</a>  
+    	<a href="{{ url_for('user_page', request_username = session.username) }}"> {{ session.username }}</a>
+    	<a href="{{ url_for('users_list_page') }}">Users</a>
+    	<a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+</div>
+
+<div id="page">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message | safe }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    
+    {% block page_intr %} {% endblock %}
+
+    {% block content %}
+    
+        {% block add_form %} {% endblock %}
+    
+        {% block tweets %} {% endblock%}
+
+    {% endblock %}
+</div>
+
+{% block footer %} {% endblock %}
+</body>
+</html>

@@ -1,4 +1,4 @@
-from twxt import app
+from twitter import app
 from datetime import datetime
 
 print " * %s" % datetime.now()

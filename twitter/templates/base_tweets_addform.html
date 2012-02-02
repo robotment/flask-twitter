@@ -1,0 +1,15 @@
+{% extends "base_tweets.html" %}
+
+
+{% block add_form %}
+  {% if session.username %}
+    <form action="/add_tweet" method="post" id="add-tweet">
+      
+        <input type="hidden", name="author", value="{{ session.username }}">
+        <input type="hidden", name="redirect_url", value="{{ request.url }}">
+        <textarea name="text" rows="6" cols="80" ></textarea><input type="submit" value="Post it" class="post_button">
+      
+    </form>
+    <br class="clear">
+  {% endif %}
+{% endblock %}
